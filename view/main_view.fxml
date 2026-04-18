@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.effect.DropShadow?>
+
+<VBox spacing="0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainController" style="-fx-background-color: #f4f6f9;">
+    
+    <!-- Header with Gradient -->
+    <VBox style="-fx-background-color: linear-gradient(to right, #667eea 0%, #764ba2 100%);">
+        <VBox spacing="5">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+            <Label text="Student Record Management System" style="-fx-text-fill: white; -fx-font-size: 28px; -fx-font-weight: bold;" />
+            <Label text="Manage your student database efficiently" style="-fx-text-fill: rgba(255,255,255,0.9); -fx-font-size: 14px;" />
+        </VBox>
+    </VBox>
+    
+    <!-- Main Content Area -->
+    <VBox spacing="15" VBox.vgrow="ALWAYS">
+        <padding>
+            <Insets top="20" right="20" bottom="20" left="20"/>
+        </padding>
+        
+        <!-- Form Card -->
+        <VBox style="-fx-background-color: white; -fx-background-radius: 10px; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 2);">
+            <VBox spacing="15">
+                <padding>
+                    <Insets top="20" right="20" bottom="20" left="20"/>
+                </padding>
+                
+                <Label text="Student Information" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #2d3748;">
+                    <font>
+                        <Font size="18" />
+                    </font>
+                </Label>
+                
+                <Separator />
+                
+                <GridPane hgap="15" vgap="15">
+                    <padding>
+                        <Insets top="10" />
+                    </padding>
+                    
+                    <VBox spacing="15" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                        <VBox spacing="5">
+                            <Label text="Student ID" style="-fx-font-weight: bold; -fx-text-fill: #4a5568;">
+                                <font>
+                                    <Font size="13" />
+                                </font>
+                            </Label>
+                            <TextField fx:id="idField" promptText="e.g., STU001" style="-fx-background-radius: 8px; -fx-padding: 10px; -fx-border-color: #e2e8f0; -fx-border-radius: 8px;" />
+                        </VBox>
+                        
+                        <VBox spacing="5">
+                            <Label text="Full Name" style="-fx-font-weight: bold; -fx-text-fill: #4a5568;">
+                                <font>
+                                    <Font size="13" />
+                                </font>
+                            </Label>
+                            <TextField fx:id="nameField" promptText="Enter student name" style="-fx-background-radius: 8px; -fx-padding: 10px; -fx-border-color: #e2e8f0; -fx-border-radius: 8px;" />
+                        </VBox>
+                        
+                        <VBox spacing="5">
+                            <Label text="Department" style="-fx-font-weight: bold; -fx-text-fill: #4a5568;">
+                                <font>
+                                    <Font size="13" />
+                                </font>
+                            </Label>
+                            <TextField fx:id="deptField" promptText="e.g., Computer Science" style="-fx-background-radius: 8px; -fx-padding: 10px; -fx-border-color: #e2e8f0; -fx-border-radius: 8px;" />
+                        </VBox>
+                    </VBox>
+                    
+                    <VBox spacing="15" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                        <VBox spacing="5">
+                            <Label text="Email Address" style="-fx-font-weight: bold; -fx-text-fill: #4a5568;">
+                                <font>
+                                    <Font size="13" />
+                                </font>
+                            </Label>
+                            <TextField fx:id="emailField" promptText="student@university.com" style="-fx-background-radius: 8px; -fx-padding: 10px; -fx-border-color: #e2e8f0; -fx-border-radius: 8px;" />
+                        </VBox>
+                        
+                        <VBox spacing="5">
+                            <Label text="CGPA" style="-fx-font-weight: bold; -fx-text-fill: #4a5568;">
+                                <font>
+                                    <Font size="13" />
+                                </font>
+                            </Label>
+                            <TextField fx:id="cgpaField" promptText="0.00 - 4.00" style="-fx-background-radius: 8px; -fx-padding: 10px; -fx-border-color: #e2e8f0; -fx-border-radius: 8px;" />
+                        </VBox>
+                    </VBox>
+                </GridPane>
+                
+                <HBox spacing="15" alignment="CENTER">
+                    <Button text="Add Student" onAction="#addStudent" style="-fx-background-color: linear-gradient(to right, #48bb78, #38a169); -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 10 25; -fx-background-radius: 8px;">
+                        <effect>
+                            <DropShadow offsetY="2" radius="3" color="rgba(72,187,120,0.3)"/>
+                        </effect>
+                    </Button>
+                    
+                    <Button text="Update Student" onAction="#updateStudent" style="-fx-background-color: linear-gradient(to right, #4299e1, #3182ce); -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 10 25; -fx-background-radius: 8px;">
+                        <effect>
+                            <DropShadow offsetY="2" radius="3" color="rgba(66,153,225,0.3)"/>
+                        </effect>
+                    </Button>
+                    
+                    <Button text="Delete Student" onAction="#deleteStudent" style="-fx-background-color: linear-gradient(to right, #fc8181, #f56565); -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 10 25; -fx-background-radius: 8px;">
+                        <effect>
+                            <DropShadow offsetY="2" radius="3" color="rgba(245,101,101,0.3)"/>
+                        </effect>
+                    </Button>
+                </HBox>
+                
+            </VBox>
+        </VBox>
+        
+        <!-- Search Section -->
+        <VBox style="-fx-background-color: white; -fx-background-radius: 10px; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 2);">
+            <VBox spacing="10">
+                <padding>
+                    <Insets top="15" right="15" bottom="15" left="15"/>
+                </padding>
+                <Label text="Search Students" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #2d3748;" />
+                <HBox spacing="10">
+                    <ComboBox fx:id="searchCombo" prefWidth="120" style="-fx-background-radius: 8px;" />
+                    <TextField fx:id="searchField" promptText="Enter search term..." HBox.hgrow="ALWAYS" style="-fx-background-radius: 8px; -fx-padding: 10px;" />
+                    <Button text="Search" onAction="#searchStudent" style="-fx-background-color: #667eea; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 8 20; -fx-background-radius: 8px;" />
+                    <Button text="Show All" onAction="#refreshSearch" style="-fx-background-color: #a0aec0; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 8 20; -fx-background-radius: 8px;" />
+                </HBox>
+            </VBox>
+        </VBox>
+        
+        <!-- Status Label -->
+        <Label fx:id="statusLabel" style="-fx-text-fill: #a0aec0; -fx-font-size: 13px;" />
+        
+        <!-- Students Table -->
+        <VBox style="-fx-background-color: white; -fx-background-radius: 10px; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 2);" VBox.vgrow="ALWAYS">
+            <TableView fx:id="studentTable" VBox.vgrow="ALWAYS" onMouseClicked="#loadSelectedStudent">
+                <columns>
+                    <TableColumn fx:id="colId" text="ID" prefWidth="100" />
+                    <TableColumn fx:id="colName" text="Name" prefWidth="200" />
+                    <TableColumn fx:id="colDept" text="Department" prefWidth="180" />
+                    <TableColumn fx:id="colEmail" text="Email" prefWidth="250" />
+                    <TableColumn fx:id="colCgpa" text="CGPA" prefWidth="100" />
+                </columns>
+            </TableView>
+        </VBox>
+        
+    </VBox>
+</VBox>
